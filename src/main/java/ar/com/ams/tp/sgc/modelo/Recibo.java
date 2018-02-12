@@ -11,9 +11,10 @@ package ar.com.ams.tp.sgc.modelo;
  */
 public class Recibo {
     private Integer id;
+    private Integer nroRecibo;
     private Double monto;
     private Factura factura;
     private Cliente cliente;
-    
+
     
 }
