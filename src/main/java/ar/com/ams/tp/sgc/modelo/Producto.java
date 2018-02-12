@@ -11,7 +11,9 @@ package ar.com.ams.tp.sgc.modelo;
  */
 public class Producto {
     private Integer id;
+    private String nombre;
     private Double precio;
     private Integer stock;
-    
+    private Integer stockMinimo;
+
 }
