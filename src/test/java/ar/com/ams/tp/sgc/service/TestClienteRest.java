@@ -6,10 +6,12 @@
 package ar.com.ams.tp.sgc.service;
 
 import ar.com.ams.tp.sgc.modelo.Cliente;
+import java.util.List;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -88,5 +90,11 @@ public class TestClienteRest {
         assertEquals(cli4.getCorreo(), cli3.getCorreo());
         assertEquals(cli4.getMaximoCuentaCorriente(), cli3.getMaximoCuentaCorriente());
         
+        List<Cliente> lista=  myResource.request(MediaType.APPLICATION_JSON)
+                        .get(new GenericType<List<Cliente>>() {});
+
+        Integer tamanioEsperado = 2;
+        Integer tamanioObtenido = lista.size();
+        assertEquals(tamanioEsperado,tamanioObtenido);
     }
 }
