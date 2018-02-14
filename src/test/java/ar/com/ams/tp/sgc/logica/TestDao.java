@@ -27,7 +27,7 @@ public class TestDao {
 
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackages(true, "ar.com.ams.tp.sgc.modelo")
-                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+                .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 
     }
