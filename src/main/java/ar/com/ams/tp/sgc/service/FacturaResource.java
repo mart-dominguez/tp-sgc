@@ -7,6 +7,7 @@ package ar.com.ams.tp.sgc.service;
 
 import ar.com.ams.tp.sgc.modelo.Factura;
 import ar.com.ams.tp.sgc.modelo.FacturaDetalle;
+import ar.com.ams.tp.sgc.modelo.Producto;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -72,4 +73,28 @@ public class FacturaResource {
         return Response.ok().build();
     }
 
+    @POST
+    @Path("/{id}/detalle")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postDetalleFactura(FacturaDetalle content,@PathParam("id") Integer idFactura) {
+        Factura f = em.find(Factura.class, idFactura);
+        content.setFactura(f);
+        Producto p = em.find(Producto.class, content.getProducto().getId());
+        content.setProducto(p);
+        em.persist(content);
+        return Response.ok().build();
+    }
+    
+    @POST
+    @Path("/{id}/detalle/{iddetalle}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response deleteDetalleFactura(FacturaDetalle content,@PathParam("id") Integer idFactura) {
+        Factura f = em.find(Factura.class, idFactura);
+        content.setFactura(f);
+        Producto p = em.find(Producto.class, content.getProducto().getId());
+        content.setProducto(p);
+        em.persist(content);
+        return Response.ok().build();
+    }
+    
 }
