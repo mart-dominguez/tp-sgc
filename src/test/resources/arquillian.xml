@@ -7,7 +7,7 @@
             <property name="executionType">MANAGED</property>
         </protocol>
         <configuration>
-            <property name="jbossHome">/home/martdominguez/servers/wildfly-11.0.0.Final/</property>
+            <property name="jbossHome">/home/mdominguez/srv/wildfly-11.0.0.Final/</property>
             <property name="serverConfig">standalone.xml</property>
             <property name="allowConnectingToRunningServer">true</property>
         </configuration>

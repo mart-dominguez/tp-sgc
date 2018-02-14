@@ -40,7 +40,7 @@ public class TestClienteRest {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackages(true, "ar.com.ams.tp.sgc.modelo")
                 .addPackages(true, "ar.com.ams.tp.sgc.service")
-                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+                .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 
     }
